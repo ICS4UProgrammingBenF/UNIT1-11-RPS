@@ -23,6 +23,10 @@ public class RPS {
     boolean compPaper = false;
     boolean compScissors = false;
     
+    String rock = "rock";
+    String paper = "paper";
+    String scissors = " scissors";
+    
     //get the input from the user
     
     while (invalid == true) {
@@ -32,7 +36,7 @@ public class RPS {
       //userInput.toLowerCase();
       System.out.println(userInput);
       
-      if (userInput != "rock" && userInput != "paper" && userInput != "scissors") {
+      if (userInput != rock && userInput != paper && userInput != scissors) {
         System.out.println("Selected value out of range, please enter rock, paper, or scissors");
         invalid = true;
       } else {
