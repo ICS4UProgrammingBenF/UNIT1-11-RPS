@@ -23,34 +23,48 @@ public class RPS {
     boolean compPaper = false;
     boolean compScissors = false;
     
+    //declaring more variables
     String rock = "rock";
     String paper = "paper";
-    String scissors = " scissors";
+    String scissors = "scissors";
     
     //get the input from the user
     
     while (invalid == true) {
       
+      //get the input from the user
       Scanner input = new Scanner(System.in);
       userInput = input.next();
-      //userInput.toLowerCase();
+      
+      //attempting to convert user input to string for error checking
+      userInput = userInput.toString();
+      userInput.toLowerCase();
       System.out.println(userInput);
       
-      if (userInput != rock && userInput != paper && userInput != scissors) {
-        System.out.println("Selected value out of range, please enter rock, paper, or scissors");
-        invalid = true;
-      } else {
+      //error checking. already tried (userInput != rock && userInput != paper etc.)
+      if (userInput == rock || userInput == paper || userInput == scissors) {
+        
+        //if true, state true and break the loop
+        System.out.println("Selected value IN range");
         invalid = false;
+      } else {
+        
+        //if false, state false and maintain loop
+        invalid = true;
+        System.out.println("Selected value OUT OF range, please enter rock, paper, or scissors");
       }
     }
     
+    //seeing if the loop was the issue. It wasn't
     if (userInput == "rock")  {
       userRock = true;
       invalid = false;
-      } else if (userInput == "paper")  {
+      System.out.println("rock");
+    } else if (userInput == "paper")  {
       userPaper = true;
       invalid = false;
-      } else if (userInput == "scissors") {
+      System.out.println("paper");
+    } else if (userInput == "scissors") {
       userScissors = true;
       invalid = false;
     }
